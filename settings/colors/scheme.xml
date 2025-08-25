@@ -6,7 +6,7 @@
 <theme>
   <formatVersion>7</formatVersion>
 
-  <!--Configurações de ajuda-->
+  <!-- View que configura as cores da barra de ajuda e do fundo em todos os modos -->
   <view name="system, basic, detailed, grid, video">
     <helpsystem name="help">
       <textColor>${fgColor}</textColor>
@@ -18,7 +18,7 @@
     </image>
   </view>
 
-  <!--Configurações de cores nas listas de jogos-->
+  <!-- View que configura as cores das listas de jogos, textos e overlays -->
   <view name="basic, detailed, grid, video">
     <text name="logoText, md_name">
       <color>${fgColor}${percent.90}</color>
@@ -58,6 +58,7 @@
     </datetime>
   </view>
 
+  <!-- View que configura as cores do menu de configurações -->
   <view name="menu">
     <menuText name="menutext">
       <selectedColor>${onMainColor}</selectedColor>
@@ -89,7 +90,7 @@
     </menuText>
   </view>
 
-  <!--Configurações da view "grid"-->
+  <!-- View que configura as cores dos tiles da grid -->
   <view name="grid">
     <text name="gridtile">
       <color>${fgColor}</color>
@@ -100,46 +101,47 @@
     </text>
   </view>
 
+  <!-- CustomView "boxes" que configura as cores dos tiles na grid personalizada -->
   <customView name="boxes" inherits="grid">
     <text name="gridtile">
       <color>FFFFFF</color>
       <backgroundColor>000000${percent.80}</backgroundColor>
     </text>
+
     <text name="gridtile:selected">
       <color>FFFFFF</color>
     </text>
   </customView>
 
+  <!-- CustomView "elementflix" que configura as cores dos tiles na grid estilo Netflix -->
   <customView name="elementflix" inherits="grid">
     <text name="gridtile">
       <color>${fgColor}${percent.80}</color>
     </text>
+
     <text name="gridtile:selected">
       <color>${fgColor}</color>
     </text>
   </customView>
 
-  <!-- Carousel Config -->
+  <!-- View que configura as cores do carrossel, nome do sistema e informações -->
   <view name="system">
     <carousel name="systemcarousel">
       <color>${bgColor}00</color>
     </carousel>
 
-    <!-- System Name -->
     <text name="systemName">
       <color>${fgColor}${percent.90}</color>
       <glowColor>${bgColor}${percent.10}</glowColor>
       <glowSize>1</glowSize>
     </text>
 
-    <!-- Total games per system -->
     <text name="systemInfo">
       <color>${fgColor}${percent.90}</color>
       <glowColor>${bgColor}${percent.10}</glowColor>
       <glowSize>1</glowSize>
     </text>
 
-    <!-- System Background -->
     <image name="cover_fallback" extra="true">
       <color>${bgColor}</color>
     </image>
@@ -155,13 +157,14 @@
     </text>
   </view>
 
+  <!-- View que configura a cor do fundo do OSD nos modos sistema, básico, detalhado e grid -->
   <view name="system, basic, detailed, grid">
     <image name="osdBackground" extra="true">
       <color>000000</color>
     </image>
   </view>
 
-  <!-- Clock Settings -->
+  <!-- View que configura as cores do relógio, indicador de bateria e atividade do controle -->
   <view name="screen">
     <text name="clock">
       <color>FFFFFF</color>

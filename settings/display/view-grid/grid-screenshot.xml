@@ -6,6 +6,7 @@
 <theme>
   <formatVersion>7</formatVersion>
 
+  <!-- View que configura a grid para exibir screenshots das imagens dos jogos -->
   <view name="grid">
     <imagegrid name="gamegrid">
       <imageSource>image</imageSource>

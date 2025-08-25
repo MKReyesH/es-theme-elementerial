@@ -6,26 +6,29 @@
 <theme>
   <formatVersion>7</formatVersion>
 
+  <!-- View que exibe a borda de overlay em múltiplos modos de exibição -->
   <view name="system, basic, detailed, grid, video">
     <image name="borderOverlay" extra="true">
       <path>./assets/ratio32/borders.png</path>
     </image>
   </view>
 
+  <!-- View que exibe o fundo padrão para gamelist nos modos básico, detalhado, grid e vídeo -->
   <view name="basic, detailed, grid, video">
     <image name="background_overlay" extra="true">
       <path>./assets/ratio32/gamelist-basic.png</path>
     </image>
   </view>
 
+  <!-- View que configura o espaçamento das linhas da lista de jogos nos modos básico, detalhado e vídeo -->
   <view name="basic, detailed, video">
     <textlist name="gamelist">
       <lineSpacing>1.55</lineSpacing>
       <lineSpacing ifHelpPrompts="true">1.6</lineSpacing>
-      <lineSpacing ifHelpPrompts="true" ifSubset="FontSize:small">1.675</lineSpacing>
     </textlist>
   </view>
 
+  <!-- View que exibe o rating (avaliação) na tela detalhada -->
   <view name="detailed">
     <rating name="md_rating">
       <pos>0.61 0.83125</pos>
@@ -33,12 +36,14 @@
     </rating>
   </view>
 
+  <!-- View que exibe o fundo específico para o modo vídeo -->
   <view name="video">
     <image name="background_overlay" extra="true">
       <path>./assets/ratio32/gamelist-video.png</path>
     </image>
   </view>
 
+  <!-- View que configura o grid de jogos, incluindo layout, margens e aparência dos tiles -->
   <view name="grid">
     <imagegrid name="gamegrid">
       <autoLayout>3 2</autoLayout>
@@ -58,7 +63,7 @@
     </image>
 
     <ninepatch name="gridtile.background">
-      <path>./assets/grid-selector.png</path>
+      <path>./assets/grid-selector.svg</path>
       <cornerSize>6 6</cornerSize>
     </ninepatch>
 
@@ -69,13 +74,14 @@
     </text>
   </view>
 
+  <!-- View do menu de configurações, exibindo o fundo do menu -->
   <view name="menu">
     <menuBackground name="menubg">
-      <fadePath>./assets/fade.png</fadePath>
       <path>./assets/ratio32/menu.png</path>
     </menuBackground>
   </view>
 
+  <!-- View do sistema, exibindo carrossel, fundo e informações do sistema -->
   <view name="system">
     <carousel name="systemcarousel">
       <size>1.1 1</size>
@@ -96,14 +102,14 @@
     </text>
   </view>
 
-  <view name="system, basic, detailed, grid">
+  <!-- View que exibe o fundo do OSD nos modos sistema, básico, detalhado, grid e vídeo -->
+  <view name="system, basic, detailed, grid, video">
     <image name="osdBackground" extra="true">
       <path>./assets/ratio32/osd-bg.png</path>
     </image>
   </view>
 
-  <!--Confugurações
-  da view "grid"-->
+  <!-- CustomView "boxes" para grid com layout 2x2 e cantos arredondados menores -->
   <customView name="boxes" inherits="grid">
     <imagegrid name="gamegrid">
       <autoLayout>2 2</autoLayout>
@@ -119,13 +125,14 @@
     </image>
   </customView>
 
+  <!-- CustomView "elementflix" para grid horizontal com layout 3x1 e fundo de vídeo -->
   <customView name="elementflix" inherits="grid">
     <imagegrid name="gamegrid">
       <autoLayout>3 1</autoLayout>
     </imagegrid>
 
     <ninepatch name="gridtile.background">
-      <path>./assets/grid-selector.png</path>
+      <path>./assets/grid-selector.svg</path>
       <cornerSize>6 6</cornerSize>
     </ninepatch>
 
@@ -138,25 +145,25 @@
     </image>
   </customView>
 
+  <!-- View da tela principal, exibe relógio e indicador de bateria/rede -->
   <view name="screen">
     <text name="clock">
       <pos>0 0.0375</pos>
-      <size>0.84 0</size>
-      <size ifSubset="Status Bar:clock">0.966667 0</size>
+      <size>0.775 0</size>
     </text>
 
     <batteryIndicator name="batteryIndicator">
-      <pos>0.93 0.0125</pos>
-      <size>0.05</size>
+      <pos>0.9125 0.00625</pos>
+      <size>0.075</size>
       <itemSpacing>0.008333333</itemSpacing>
 
-      <full>./assets/icons/screen/16x16/battery=full.svg</full>
-      <at75>./assets/icons/screen/16x16/battery=75.svg</at75>
-      <at50>./assets/icons/screen/16x16/battery=50.svg</at50>
-      <at25>./assets/icons/screen/16x16/battery=25.svg</at25>
-      <empty>./assets/icons/screen/16x16/battery=empty.svg</empty>
-      <incharge>./assets/icons/screen/16x16/battery=charging.svg</incharge>
-      <networkIcon>./assets/icons/screen/16x16/wifi=on.svg</networkIcon>
+      <full>./assets/icons/screen/24x24/battery=full.svg</full>
+      <at75>./assets/icons/screen/24x24/battery=75.svg</at75>
+      <at50>./assets/icons/screen/24x24/battery=50.svg</at50>
+      <at25>./assets/icons/screen/24x24/battery=25.svg</at25>
+      <empty>./assets/icons/screen/24x24/battery=empty.svg</empty>
+      <incharge>./assets/icons/screen/24x24/battery=charging.svg</incharge>
+      <networkIcon>./assets/icons/screen/24x24/wifi=on.svg</networkIcon>
     </batteryIndicator>
   </view>
 </theme>

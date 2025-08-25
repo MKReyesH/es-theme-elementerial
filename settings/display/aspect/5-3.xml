@@ -6,20 +6,21 @@
 <theme>
   <formatVersion>7</formatVersion>
 
+  <!-- View que exibe a borda de overlay em múltiplos modos de exibição -->
   <view name="system, basic, detailed, grid, video">
     <image name="borderOverlay" extra="true">
       <path>./assets/ratio53/borders.png</path>
     </image>
   </view>
 
-  <!--Configurações
-  comuns de views-->
+  <!-- View que exibe o fundo padrão para gamelist nos modos básico, detalhado, grid e vídeo -->
   <view name="basic, detailed, grid, video">
     <image name="background_overlay" extra="true">
       <path>./assets/ratio53/gamelist-basic.png</path>
     </image>
   </view>
 
+  <!-- View que configura o espaçamento das linhas da lista de jogos nos modos básico, detalhado e vídeo -->
   <view name="basic, detailed, video">
     <textlist name="gamelist">
       <lineSpacing>1.6</lineSpacing>
@@ -27,6 +28,7 @@
     </textlist>
   </view>
 
+  <!-- View que exibe o rating (avaliação) na tela detalhada -->
   <view name="detailed">
     <rating name="md_rating">
       <pos>0.62 0.83125</pos>
@@ -34,18 +36,18 @@
     </rating>
   </view>
 
+  <!-- View que exibe o fundo específico para o modo vídeo -->
   <view name="video">
     <image name="background_overlay" extra="true">
       <path>./assets/ratio53/gamelist-video.png</path>
     </image>
   </view>
 
-  <!--Confugurações
-  da view "grid"-->
+  <!-- View que configura o grid de jogos, incluindo layout, margens e aparência dos tiles -->
   <view name="grid">
     <imagegrid name="gamegrid">
       <autoLayout>4 2</autoLayout>
-      <margin>0.025 0.025</margin>      <!-- 480x320 / 12x 8y -->
+      <margin>0.025 0.025</margin>
     </imagegrid>
 
     <gridtile name="default">
@@ -61,28 +63,26 @@
     </image>
 
     <ninepatch name="gridtile.background">
-      <path>./assets/grid-selector@3.png</path>
+      <path>./assets/grid-selector@3.svg</path>
       <cornerSize>10 10</cornerSize>
     </ninepatch>
 
     <text name="gridtile">
       <size>0.9 0.18</size>
       <padding>0.05 0</padding>
-
       <lineSpacing>1.15</lineSpacing>
     </text>
   </view>
 
-  <!-- Menu Settings -->
+  <!-- View do menu de configurações, exibindo o fundo do menu -->
   <view name="menu">
     <menuBackground name="menubg">
-      <fadePath>./assets/fade.png</fadePath>
       <path>./assets/ratio53/menu.png</path>
     </menuBackground>
   </view>
 
+  <!-- View do sistema, exibindo carrossel, fundo e informações do sistema -->
   <view name="system">
-    <!-- Cards position -->
     <carousel name="systemcarousel">
       <size>1.2 1</size>
       <maxLogoCount>5</maxLogoCount>
@@ -93,29 +93,27 @@
       <path>./assets/ratio53/carousel-background.png</path>
     </image>
 
-    <!-- System Name -->
     <text name="systemName" extra="true">
-      <pos>0.08333 0.325</pos>      <!-- 480x320 / 48x 104y -->
+      <pos>0.08333 0.325</pos>
     </text>
 
-    <!-- Total games per system -->
     <text name="systemInfo">
       <pos>0.08333 0.41</pos>
     </text>
   </view>
 
-  <view name="system, basic, detailed, grid">
+  <!-- View que exibe o fundo do OSD nos modos sistema, básico, detalhado, grid e vídeo-->
+  <view name="system, basic, detailed, grid, video">
     <image name="osdBackground" extra="true">
       <path>./assets/ratio53/osd-bg.png</path>
     </image>
   </view>
 
-  <!--Confugurações
-  da view "grid"-->
+  <!-- CustomView "boxes" para grid com layout 3x2 e cantos arredondados menores -->
   <customView name="boxes" inherits="grid">
     <imagegrid name="gamegrid">
       <autoLayout>3 2</autoLayout>
-      <margin>0.025 0.041667</margin>      <!-- 1920x1152 / 48x 48y -->
+      <margin>0.025 0.041667</margin>
     </imagegrid>
 
     <image name="gridtile.image">
@@ -127,13 +125,14 @@
     </image>
   </customView>
 
+  <!-- CustomView "elementflix" para grid horizontal com layout 5x1 e fundo de vídeo -->
   <customView name="elementflix" inherits="grid">
     <imagegrid name="gamegrid">
       <autoLayout>5 1</autoLayout>
     </imagegrid>
 
     <ninepatch name="gridtile.background">
-      <path>./assets/grid-selector@3.png</path>
+      <path>./assets/grid-selector@3.svg</path>
       <cornerSize>6 6</cornerSize>
     </ninepatch>
 
@@ -146,11 +145,11 @@
     </image>
   </customView>
 
+  <!-- View da tela principal, exibe relógio e indicador de bateria/rede -->
   <view name="screen">
     <text name="clock">
       <pos>0 0.041666667</pos>
       <size>0.84 0</size>
-      <size ifSubset="Status Bar:clock">0.966667 0</size>
     </text>
 
     <batteryIndicator name="batteryIndicator">

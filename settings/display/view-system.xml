@@ -6,17 +6,15 @@
 <theme>
   <formatVersion>7</formatVersion>
 
+  <!-- View do sistema, exibe carrossel, fundo, nome, logo e informações do sistema -->
   <view name="system">
-    <!-- Cards position -->
     <carousel name="systemcarousel">
       <origin>0.5 0</origin>
       <pos>0.5 0</pos>
       <defaultTransition>fade</defaultTransition>
       <systemInfoDelay>300</systemInfoDelay>
-
-      <logoSize>0.25 0.25</logoSize>      <!-- 480x320 / 120x 80y -->
+      <logoSize>0.25 0.25</logoSize>
       <logoScale>1.4</logoScale>
-
       <zIndex>10</zIndex>
     </carousel>
 
@@ -27,53 +25,39 @@
       <zIndex>-7</zIndex>
     </image>
 
-    <!-- System Name -->
+    <!-- Bloco que exibe o nome completo do sistema -->
     <text name="systemName" extra="true">
       <text>${system.fullName}</text>
       <origin>0 0</origin>
-      <size>0.866667 ${fontSizeH1-medium}</size>      <!-- 480x320 / 416x -->
+      <size>0.866667 ${fontSizeH1-medium}</size>
       <fontPath>${fontBold}</fontPath>
-
-      <fontSize>${fontSizeH1-medium}</fontSize>
-      <fontSize ifSubset="FontSize:large">${fontSizeH1-large}</fontSize>
-      <fontSize ifSubset="FontSize:small">${fontSizeH1-small}</fontSize>
-
+      <forceUppercase>1</forceUppercase>
       <lineSpacing>1</lineSpacing>
       <alignment>left</alignment>
       <zIndex>15</zIndex>
     </text>
 
-    <!-- Total games per system -->
+    <!-- Bloco que exibe o número de jogos -->
     <text name="systemInfo">
       <origin>0 0</origin>
-      <size>0.866667 ${fontSizeBody-medium}</size>      <!-- 480x320 / 416x -->
-
-      <fontSize>${fontSizeBody-medium}</fontSize>
-      <fontSize ifSubset="FontSize:large">${fontSizeBody-large}</fontSize>
-      <fontSize ifSubset="FontSize:small">${fontSizeBody-small}</fontSize>
-
+      <size>0.866667 ${fontSizeBody-medium}</size>
       <alignment>left</alignment>
-      <forceUppercase>0</forceUppercase>
+      <forceUppercase>1</forceUppercase>
       <fontPath>${fontRegular}</fontPath>
       <lineSpacing>1</lineSpacing>
       <zIndex>15</zIndex>
     </text>
 
-    <!-- System Logo -->
     <image name="logo">
       <path>./assets/logos/${system.theme}.svg</path>
     </image>
 
-    <!-- Logo Fallback -->
+    <!-- Bloco que exibe texto alternativo para o logo -->
     <text name="logoText">
       <origin>0 0</origin>
       <fontPath>${fontRegular}</fontPath>
-      <fontSize>${fontSizeBody-medium}</fontSize>
-      <fontSize ifSubset="FontSize:large">${fontSizeBody-large}</fontSize>
-      <fontSize ifSubset="FontSize:small">${fontSizeBody-small}</fontSize>
     </text>
 
-    <!-- System Background -->
     <image name="background" extra="true">
       <path>./assets/background.png</path>
       <size>1 1</size>
@@ -83,7 +67,6 @@
       <zIndex>-50</zIndex>
     </image>
 
-    <!-- System Background -->
     <image name="cover" extra="true">
       <size>1 0</size>
       <origin>0 0.5</origin>
@@ -95,6 +78,7 @@
     </image>
   </view>
 
+  <!-- View que exibe o fundo do OSD nos modos sistema, básico, detalhado e grid -->
   <view name="system, basic, detailed, grid">
     <image name="osdBackground" extra="true">
       <pos>0 0</pos>
@@ -104,12 +88,11 @@
     </image>
   </view>
 
+  <!-- View da tela principal, exibe relógio e atividade do controle -->
   <view name="screen">
     <text name="clock">
       <origin>0 0.5</origin>
-      <fontSize>${fontSizeCaption-medium}</fontSize>
-      <fontSize ifSubset="Ratio:ratio53">${fontSizeBody-medium}</fontSize>
-
+      <fontSize>${fontSizeBody-medium}</fontSize>
       <fontPath>${fontRegular}</fontPath>
       <lineSpacing>1</lineSpacing>
       <alignment>right</alignment>

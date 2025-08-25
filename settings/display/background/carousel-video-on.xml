@@ -6,8 +6,10 @@
 <theme>
   <formatVersion>7</formatVersion>
 
+  <!-- View que exibe um vídeo no fundo do carrossel do sistema -->
   <view name="system">
     <video name="carouselVideo" extra="true">
+      <default></default>
       <path>{random}</path>
       <pos>0 0.25</pos>
       <origin>0 0.5</origin>
